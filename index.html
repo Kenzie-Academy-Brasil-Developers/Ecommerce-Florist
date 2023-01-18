@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/database.js" defer></script>
+    <script src="./js/index.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/a5e399c94d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/extras.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/backgroundFlowers.css" />
+
+    <title>Florist</title>
+  </head>
+  <body>
+    <header>
+      <div class="menuInicial">
+        <figure class="logo">
+          <img src="./img/logo.png.webp" alt="Logo" />
+        </figure>
+        <div>
+          <a class="menus" href="">HOME</a>
+          <a class="menus" href="">CONTACT</a>
+          <button class="menuSearch" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <button class="menuFav" type="submit">
+            <spam>
+              <i class="fa-solid fa-heart"></i>
+              <small id="countFav"></small>
+            </spam>
+          </button>
+          <button class="menuCompra" type="submit">
+            <spam>
+              <i class="fa-solid fa-cart-shopping"></i>
+              <small id="countCompra"></small>
+            </spam>
+          </button>
+        </div>
+      </div>
+
+      <nav class="menuCategorias">
+        <p id="all" class="menus">All</p>
+        <p id="bouquet" class="menus">Bouquet</p>
+        <p id="flowerBox" class="menus">Flower box</p>
+        <p id="flowerShelf" class="menus">Flower shelf</p>
+        <p id="basketofFlower" class="menus">Basket of flower</p>
+        <p id="giftCombos" class="menus">Gift combos</p>
+      </nav>
+    </header>
+
+    <section class="extras"></section>
+    <main>
+      <aside class="sidebar">
+        <form class="formularioPesquisa">
+          <input
+            id="textoPesquisa"
+            type="text"
+            placeholder="Digite aqui sua pesquisa"
+          />
+          <input
+            id="botaoPesquisa"
+            type="submit"
+            class="botaoPesquisa"
+            value="Pesquisar"
+          />
+        </form>
+        <div class="asidebCompra">
+          <h3 class="tittelCarrinho">Carrinho de Compras</h3>
+          <ul class="itemCarrinho"></ul>
+          <div class="total">
+            <p>Quantidade:</p>
+            <p class="quantidadeTotal"></p>
+          </div>
+          <div class="total">
+            <p>Total:</p>
+            <p id="valorFinal"></p>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <footer></footer>
+  </body>
+</html>

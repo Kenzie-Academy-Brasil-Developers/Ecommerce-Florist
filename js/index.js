@@ -181,30 +181,64 @@ buttonFavoritos.addEventListener("click", function (event) {
 
 /* ADICIONAR AOS CARRINHO */
 
-let countCompra = 0;
+// let quantSelecionada = 0;
 let carrinhos = document.querySelectorAll(".compra");
-
+let arrProdutos = [];
+let arrQuantidade = [];
+let arrValor = [];
 for (let i = 0; i < carrinhos.length; i++) {
   let carrinho = carrinhos[i];
+  let elemento = data[i];
 
   carrinho.addEventListener("click", function (event) {
     let id = event.target.id;
     let idCarrinho = parseInt(id.substring(5));
+    let quantidadeTela = document.querySelector("#quant-" + idCarrinho);
 
-    if (!verificaItemCarrinho(idCarrinho)) {
+    if (verificaItemCarrinho(idCarrinho)) {
+      // quantSelecionada++;
+      elemento.quantSelecionada++;
+      quantidadeTela.innerText = `Quantidade: ${elemento.quantSelecionada} `;
+
+      elemento.valorSelecionado = elemento.quantSelecionada * elemento.value;
+      valorSelecionado = elemento.valorSelecionado;
+      document.querySelector(
+        "#price-" + idCarrinho
+      ).innerText = `${formataValor(valorSelecionado)}`;
+    } else {
       let productCarrinho = procuraItem(idCarrinho);
       let newCardCarrinho = novoCardCarrinho(productCarrinho);
       let newCardExtra = novoCardCarrinhoExtra(productCarrinho);
       let listaDeCompras = document.getElementById("carrinho");
-      let listaDeComprasAside = document.querySelector(".itemCarrinho");
+      let listaDeComprasAside = document.querySelector("#itemCarrinho");
+
+      listaDeComprasAside.classList.remove("itemCarrinhoHidden");
+      listaDeComprasAside.classList.add("itemCarrinho");
+
       listaDeCompras.appendChild(newCardExtra);
       listaDeComprasAside.appendChild(newCardCarrinho);
-      let valorFinal = somaValores(productCarrinho.value);
-      countCompra++;
-      document.querySelector("#countCompra").innerText = `(${countCompra})`;
-      document.querySelector(".quantidadeTotal").innerText = `${countCompra}`;
+
+      elemento.valorSelecionado = elemento.value;
+
+      // quantSelecionada = 1;
+      elemento.quantSelecionada = 1;
+
+      arrProdutos.push(elemento);
     }
+    somaCarrinho(arrProdutos);
   });
+}
+
+function somaCarrinho(arr) {
+  let quantidade = 0;
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    quantidade = quantidade + arr[i].quantSelecionada;
+    total = total + arr[i].valorSelecionado;
+  }
+  document.querySelector(".quantidadeTotal").innerText = `${quantidade}`;
+  document.querySelector("#countCompra").innerText = `(${quantidade})`;
+  document.getElementById("valorFinal").innerText = `${formataValor(total)}`;
 }
 
 let arr = [];
@@ -216,6 +250,7 @@ function soma() {
   }
   return soma;
 }
+
 function somaValores(valor) {
   arr.push(valor);
   document.getElementById("valorFinal").innerText = `${formataValor(soma())}`;
@@ -237,10 +272,9 @@ function procuraItem(id) {
 }
 
 function verificaItemCarrinho(id) {
-  let idItem = document.querySelector("#cardB_" + id);
-
-  console.log(idItem);
-  if (idItem == null) {
+  let idItem = document.querySelector("#cardBAside_" + id);
+  let idItemExtra = document.querySelector("cardCompraExtra_" + id);
+  if (idItem == null && idItemExtra == null) {
     return false;
   } else {
     return true;
@@ -269,7 +303,7 @@ function novoCardCarrinho(produto) {
   let iconRemove = document.createElement("i");
   let textRemove = document.createElement("small");
 
-  card.setAttribute("id", `cardCompraAside_${produto.id}`);
+  card.setAttribute("id", `cardBAside_${produto.id}`);
   card.setAttribute("class", "cardCompra");
   card.setAttribute("target", "_blank");
   img.setAttribute("src", `./img/produtos/product-${produto.id}.jpg`);
@@ -281,7 +315,7 @@ function novoCardCarrinho(produto) {
   quantidade.setAttribute("class", "valor");
   quantidade.innerText = "Quantidade: 1";
   cardName.innerText = produto.nameItem;
-
+  valor.setAttribute("id", `price-${produto.id}`);
   valor.setAttribute("class", "valor");
   valor.innerText = formataValor(produto.value);
   eventDelet.setAttribute("class", "eventDelet");
@@ -299,7 +333,7 @@ function novoCardCarrinho(produto) {
     subtraiValores(produto.value);
     countCompra--;
     document.querySelector("#countCompra").innerText = `(${countCompra})`;
-    document.querySelector(".quantidadeTotal").innerText = `${countCompra}`;
+    /*  document.querySelector(".quantidadeTotal").innerText = `${countCompra}`; */
   });
 
   listCarrinho.appendChild(card);

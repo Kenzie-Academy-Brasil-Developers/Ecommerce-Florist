@@ -464,3 +464,38 @@ giftCombos.addEventListener("click", function (event) {
   criterio = criterio.toLowerCase();
   filtraCategoria(data, criterio);
 });
+
+/* FILTRAR PESQUISA */
+
+let pesquisa = document.querySelector("#botaoPesquisa");
+
+pesquisa.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  let valor = document.querySelector("#textoPesquisa");
+  let valorPesquisado = valor.value;
+  valorPesquisado = valorPesquisado
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .split(" ");
+
+  let todositens = document.querySelector(".vitrine");
+
+  Array.from(todositens.children)
+    .filter(
+      (pesquisa) =>
+        !pesquisa.textContent
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .trim()
+          .split(" ")
+          .toString()
+          .includes(valorPesquisado)
+    )
+    .forEach((pesquisa) => {
+      pesquisa.classList.add("hidden");
+    });
+});

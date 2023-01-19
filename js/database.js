@@ -9,7 +9,7 @@ const data = [
       "O Cacto San Pedro é muito utilizado em rituais dos povos indígenas da América do S...",
     value: 19.9,
     addCart: "Adicionar ao carrinho",
-    tag: ["Cesta de Flores"],
+    tag: ["Flower shelf"],
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const data = [
       "Musa inspiradora de todas as artes, desde a pintura até a poesia, ela possui muitos admir...",
     value: 8.9,
     addCart: "Adicionar ao carrinho",
-    tag: ["Box de Flores"],
+    tag: ["Flower box"],
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const data = [
       "Aspargo são plantas pendentes de sombra e sol, ou seja, elas precisam pegar um pouc...",
     value: 40,
     addCart: "Adicionar ao carrinho",
-    tag: ["Cesta de Flores"],
+    tag: ["Flower shelf"],
   },
   {
     id: 4,
@@ -69,7 +69,7 @@ const data = [
       "Originária da Ásia, é muito conhecida como Crista-plumosa ou Crista-de-galo-plumosa é s...",
     value: 18.9,
     addCart: "Adicionar ao carrinho",
-    tag: ["Box de Flores"],
+    tag: ["Flower box"],
   },
   {
     id: 8,
@@ -79,7 +79,7 @@ const data = [
       "Como não amar essa suculenta? Esta é uma das queridinhas dos nossos clentes...",
     value: 8.9,
     addCart: "Adicionar ao carrinho",
-    tag: ["Cesta de Flores"],
+    tag: ["Flower shelf"],
   },
   {
     id: 9,
@@ -99,7 +99,7 @@ const data = [
       " No Brasil, é a flor símbolo da cidade de Gramado, na Serra Gaúcha. um arbusto muito fl...",
     value: 21.9,
     addCart: "Adicionar ao carrinho",
-    tag: ["Box de Flores"],
+    tag: ["Flower box"],
   },
   {
     id: 11,
@@ -109,7 +109,7 @@ const data = [
       "A palmeira-ráfia é amplamente utilizada no paisagismo de jardins, varandas ou ambientes...",
     value: 15.9,
     addCart: "Adicionar ao carrinho",
-    tag: ["Box de Flores"],
+    tag: ["Flower box"],
   },
   {
     id: 12,
@@ -129,7 +129,7 @@ const data = [
       "A costela de Adão já é a queridinha dos decoradores há algum tempo. Que tal ver como ...",
     value: 22.9,
     addCart: "Adicionar ao carrinho",
-    tag: ["Box de Flores"],
+    tag: ["Flower box"],
   },
   {
     id: 14,
@@ -139,7 +139,7 @@ const data = [
       "O Cacto Semáforo pode crescer até incríveis cinco metros de altura. Natural do Méxic...",
     value: 12.9,
     addCart: "Adicionar ao carrinho",
-    tag: ["Cesta de Flores"],
+    tag: ["Flower shelf"],
   },
   {
     id: 15,

@@ -165,7 +165,7 @@ let listFav = document.createElement("ul");
 
 divFavoritos.setAttribute("class", "divExtraFavorito");
 listFav.setAttribute("id", "favoritos");
-listFav.setAttribute("class", "favoritosHidden");
+listFav.setAttribute("class", "hidden");
 
 sectionFavoritos.appendChild(divFavoritos);
 divFavoritos.appendChild(listFav);
@@ -174,7 +174,7 @@ buttonFavoritos.addEventListener("click", function (event) {
   console.log(event);
 
   let favoritos = document.getElementById("favoritos");
-  favoritos.classList.toggle("favoritosHidden");
+  favoritos.classList.toggle("hidden");
   document.getElementById("favoritos");
   favoritos.classList.toggle("favoritos");
 });
@@ -212,7 +212,7 @@ for (let i = 0; i < carrinhos.length; i++) {
       let listaDeCompras = document.getElementById("carrinho");
       let listaDeComprasAside = document.querySelector("#itemCarrinho");
 
-      listaDeComprasAside.classList.remove("itemCarrinhoHidden");
+      listaDeComprasAside.classList.remove("hidden");
       listaDeComprasAside.classList.add("itemCarrinho");
 
       listaDeCompras.appendChild(newCardExtra);
@@ -418,14 +418,14 @@ let listCarrinho = document.createElement("ul");
 
 divCarrinho.setAttribute("class", "divExtraCarrinho");
 listCarrinho.setAttribute("id", "carrinho");
-listCarrinho.setAttribute("class", "carrinhoHidden");
+listCarrinho.setAttribute("class", "hidden");
 
 sectionCarrinho.appendChild(divCarrinho);
 divCarrinho.appendChild(listCarrinho);
 
 buttonCompra.addEventListener("click", function (event) {
   let carrinho = document.getElementById("carrinho");
-  carrinho.classList.toggle("carrinhoHidden");
+  carrinho.classList.toggle("hidden");
   document.getElementById("carrinho");
   carrinho.classList.toggle("carrinho");
 });

@@ -4,7 +4,7 @@ body {
   font-family: "Inter", sans-serif;
   margin: 0 auto;
   padding: 0;
-  width: 100%;
+  width: 1200px;
   height: 100vh;
   color: white;
 }
@@ -34,9 +34,6 @@ spam {
   font-size: 20px;
 }
 
-.espacoEmBranco {
-  border-top: groove #dad8d840 4px;
-}
 .menuCategorias {
   display: flex;
   justify-content: center;
@@ -69,16 +66,7 @@ spam {
   justify-content: flex-start;
   flex-wrap: nowrap;
   margin: 20px;
-  color: rgba(55, 38, 140, 0.6);
-  font-weight: 700;
-  font-size: 48px;
-  text-align: left;
   overflow-x: auto;
-}
-.favoritosHidden {
-  display: none;
-  height: 0;
-  opacity: 0;
 }
 
 .divExtraCarrinho .carrinho {
@@ -94,16 +82,7 @@ spam {
   justify-content: flex-start;
   flex-wrap: nowrap;
   margin: 20px;
-  color: rgba(55, 38, 140, 0.6);
-  font-weight: 700;
-  font-size: 48px;
-  text-align: left;
   overflow-x: auto;
-}
-.carrinhoHidden {
-  display: none;
-  height: 0;
-  opacity: 0;
 }
 
 main {
@@ -134,10 +113,6 @@ main {
   position: relative;
 }
 
-.hidden {
-  display: none;
-}
-
 .card:hover {
   transform: scale(1.1);
 }
@@ -148,11 +123,9 @@ main {
   height: 320px;
 }
 
-.imgCard {
-  position: relative;
-}
-
-.icones .compra {
+.icones .compra,
+.fav,
+.remove {
   display: none;
   border: none;
   background: none;
@@ -163,38 +136,20 @@ main {
 .compra:active i {
   color: rebeccapurple;
 }
-.icones .fav {
-  display: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-}
+
 .fav:active i {
   color: rebeccapurple;
-}
-.icones .remove {
-  display: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
 }
 
 .remove:active i {
   color: rebeccapurple;
 }
+
 .icones i {
-  display: none;
   color: #f5f5f5;
   font-size: 35px;
 }
 
-.icones:hover i {
-  display: block;
-}
 .icones:hover .fav {
   display: block;
 }
@@ -202,9 +157,11 @@ main {
 .icones:hover .compra {
   display: block;
 }
+
 .icones:hover .remove {
   display: block;
 }
+
 .card:hover .icones {
   font-size: 35px;
   width: 240px;
@@ -222,7 +179,6 @@ main {
 }
 
 .cardCategory {
-  cursor: pointer;
   padding: 10px 10px;
   margin: 10px 0px 5px 10px;
   width: 35%;
@@ -258,18 +214,9 @@ main {
   font-weight: 700;
   color: #2e245e;
 }
-.addCart {
-  padding: 5px;
-  margin-left: 10px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #2e245e;
-}
+
 .sidebar {
   margin-top: 30px;
-  width: 320px;
-  height: 10px;
-  color: black;
 }
 .formularioPesquisa {
   width: 100%;
@@ -285,6 +232,7 @@ main {
   padding: 15px;
   border: none;
 }
+
 #botaoPesquisa {
   font-size: 14px;
   font-weight: 400;
@@ -293,10 +241,6 @@ main {
   padding: 15px 25px;
   border: none;
   margin-right: 0px;
-}
-
-.asideCompra {
-  height: 150px;
 }
 
 .tittelCarrinho {
@@ -314,10 +258,6 @@ main {
   height: 300px;
   overflow-x: auto;
   position: relative;
-}
-
-.itemCarrinhoHidden {
-  display: none;
 }
 
 .total {
@@ -352,8 +292,11 @@ main {
   padding-left: 10px;
 }
 
-.iconDelet a {
+.eventDelet {
   margin-left: 10px;
+  margin-top: 8px;
+}
+.iconDelet a {
   padding: 5px;
   text-decoration: none;
   color: #828282;
@@ -362,4 +305,10 @@ main {
 .remove {
   text-decoration: none;
   border: none;
+}
+
+.hidden {
+  display: none;
+  height: 0;
+  opacity: 0;
 }

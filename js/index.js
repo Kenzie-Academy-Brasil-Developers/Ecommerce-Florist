@@ -88,15 +88,15 @@ for (let i = 0; i < favoritos.length; i++) {
     let id = event.target.id;
     let idItem = parseInt(id.substring(5));
 
-    if (!verificaItemFavorito(idItem)) {
+    if (confirmaItemNoFavoritos(idItem)) {
+      alert("O produto já esta na lista de Favoritos");
+    } else {
       let productFav = procuraItem(idItem);
       let newCard = novoCardFav(productFav);
       let listaFavoritos = document.querySelector("#favoritos");
       listaFavoritos.appendChild(newCard);
       countFav++;
       document.querySelector("#countFav").innerText = `(${countFav})`;
-    } else {
-      alert("O produto já esta na lista de Favoritos");
     }
   });
 }
@@ -195,7 +195,7 @@ for (let i = 0; i < carrinhos.length; i++) {
     let idCarrinho = parseInt(id.substring(5));
     let quantidadeTela = document.querySelector("#quant-" + idCarrinho);
 
-    if (verificaItemCarrinho(idCarrinho)) {
+    if (confirmaItemNoCarrinho(idCarrinho)) {
       // quantSelecionada++;
       elemento.quantSelecionada++;
       quantidadeTela.innerText = `Quantidade: ${elemento.quantSelecionada} `;
@@ -271,7 +271,7 @@ function procuraItem(id) {
   }
 }
 
-function verificaItemCarrinho(id) {
+function confirmaItemNoCarrinho(id) {
   let idItem = document.querySelector("#cardBAside_" + id);
   let idItemExtra = document.querySelector("cardCompraExtra_" + id);
   if (idItem == null && idItemExtra == null) {
@@ -281,7 +281,7 @@ function verificaItemCarrinho(id) {
   }
 }
 
-function verificaItemFavorito(id) {
+function confirmaItemNoFavoritos(id) {
   let idItem = document.querySelector("#cardF_" + id);
 
   console.log(idItem);

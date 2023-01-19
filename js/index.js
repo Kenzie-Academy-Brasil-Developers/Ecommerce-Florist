@@ -333,7 +333,7 @@ function novoCardCarrinho(produto) {
     subtraiValores(produto.value);
     countCompra--;
     document.querySelector("#countCompra").innerText = `(${countCompra})`;
-    document.querySelector(".quantidadeTotal").innerText = `${countCompra}`;
+    /*  document.querySelector(".quantidadeTotal").innerText = `${countCompra}`; */
   });
 
   listCarrinho.appendChild(card);
